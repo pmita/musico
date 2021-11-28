@@ -1,16 +1,24 @@
 import React, { useState } from 'react'
 import './Signup.css'
+//FIREBASE
+import { useSignup } from '../../hooks/useSignup'
+//ROUTER
+import { useNavigate } from 'react-router'
 
 const Signup = () => {
     //STATE
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [displayName, setDisplayName] = useState('')
+    const { signup, isPending, error } = useSignup()
+    const navigate = useNavigate()
 
     //EVENTS
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         console.log(email, password, displayName)
+        await signup(email, password)
+        navigate('/')
     }
 
     return(
@@ -43,7 +51,9 @@ const Signup = () => {
                         value={displayName}
                     />
                 </label>
-                <button className='btn'>Sign Up</button>
+                {!isPending && <button className='btn'>Sign Up</button>}
+                {isPending && <button className='btn' disabled>Loading...</button>}
+                {error && <p className='error'>{error}</p>}
             </form>
         </div>
     );
