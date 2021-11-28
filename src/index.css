@@ -3,7 +3,7 @@
 /*Variables*/
 :root{
   --black-color: #222326;
-  --white-color: #000000;
+  --white-color: #FAFAFA;
   --pink-color: #F7AFAF;
 }
 
@@ -27,6 +27,9 @@ ul, li, p, h1, h2, h3, h4 {
 ul {
   list-style-type: none;
 }
+a{
+  text-decoration: none;
+}
 
 /* layout */
 .page-title {
@@ -35,17 +38,17 @@ ul {
   display: inline-block;
 }
 .btn {
-  background: #fff;
+  background: var(--pink-color);
   padding: 8px 12px;
   border-radius: 4px;
-  color: var(--pink-color);
+  color: var(--white-color);
   cursor: pointer;
   font-size: 1em;
   border: 1px solid var(--pink-color);
 }
 .btn:hover {
-  color: #fff;
-  background-color: var(--pink-color);
+  background-color: var(--white-color);
+  color: var(--pink-color);
 }
 
 /* forms */
