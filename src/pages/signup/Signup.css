@@ -1,0 +1,8 @@
+.signup-page{
+    display: grid;
+    place-content: center;
+}
+
+.signup-page form{
+    width: 500px;
+}
