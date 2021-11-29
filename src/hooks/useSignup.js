@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { projectAuth } from '../firebase/config' //FIREBASE
+import { projectAuth, projectFirestore } from '../firebase/config' //FIREBASE
 import { useAuthContext } from './useAuthContext' //CONTEXT
 
 export const useSignup = () => {
@@ -25,6 +25,12 @@ export const useSignup = () => {
             //response in an object and within exists a user object with all the details
             //we need to update the user details
             await response.user.updateProfile({ displayName : displayName })
+
+            //we then need to adda new user document under the users collection
+            await projectFirestore.collection('users').doc(response.user.uid).set({
+                online : true,
+                displayName : displayName
+            })
                         
             dispatch({ type : 'LOGIN', payload : response.user })
 
