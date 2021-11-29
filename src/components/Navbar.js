@@ -11,12 +11,29 @@ const Navbar = () => {
     const { user } = useAuthContext()
     const { signout, isPending } = useLogout()
 
+    console.log(user)
+
     return(
         <nav className='navbar'>
             <h2 className='navbar-left'>
                 <Link to='/'>Musico-co</Link>
             </h2>
             <ul className='navbar-right'>
+                {user && (
+                    <li>
+                        <h4>Hey, {user.displayName}</h4>
+                    </li>
+                )}
+
+                <li>
+                    <Link
+                        to='/create'
+                        className='btn'
+                    >
+                        + Add Song
+                    </Link>
+                </li>
+
                 {!user && (
                     <>
                         <li>
