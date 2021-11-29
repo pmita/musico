@@ -16,7 +16,7 @@ const Signup = () => {
     //EVENTS
     const handleSubmit = async (e) => {
         e.preventDefault()
-        await signup(email, password, displayName)
+        signup(email, password, displayName)
         navigate('/')
     }
 

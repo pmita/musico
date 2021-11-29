@@ -1,0 +1,8 @@
+.signin-page{
+    display: grid;
+    place-content: center;
+}
+
+.signin-page form{
+    width: 500px;
+}

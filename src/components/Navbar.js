@@ -11,8 +11,6 @@ const Navbar = () => {
     const { user } = useAuthContext()
     const { signout, isPending } = useLogout()
 
-    console.log(user)
-
     return(
         <nav className='navbar'>
             <h2 className='navbar-left'>
