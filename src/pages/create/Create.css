@@ -1,0 +1,10 @@
+.create-page{
+    width: 100%;
+    min-height: 90vh;
+    display: grid;
+    place-items: center;
+}
+
+.create-page form{
+    width: 500px;
+}

@@ -1,4 +1,6 @@
 .signin-page{
+    width: 100%;
+    min-height: 90vh;
     display: grid;
     place-content: center;
 }
