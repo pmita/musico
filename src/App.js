@@ -10,6 +10,7 @@ import Navbar from './components/Navbar';
 // HOOKS
 import { useAuthContext } from './hooks/useAuthContext';
 import Create from './pages/create/Create';
+import Song from './pages/song/Song';
 
 function App() {
   // STATE
@@ -30,6 +31,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path='/' exact element={<Home />} />
+          <Route path='/song/:id' element={<Song />} />
           <Route path='/login' element={<PrivateRouteToHome />}>
             <Route path='/login' element={<Login />} />
           </Route>
