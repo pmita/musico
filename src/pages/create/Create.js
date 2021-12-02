@@ -1,5 +1,9 @@
 import React, { useState } from 'react'
 import './Create.css'
+// HOOKS
+import { useFirestore } from '../../hooks/useFirestore'
+// ROUTER
+import { useNavigate } from 'react-router'
 
 const Create = () => {
     // STATE
@@ -7,11 +11,14 @@ const Create = () => {
     const [artist, setArtist] = useState('')
     const [cover, setCover] = useState('')
     const [song_path, setSong_path] = useState('')
+    const { addDocument } = useFirestore('songs') 
+    const navigate = useNavigate()
 
     // EVENTS
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(title, artist, cover, song_path)
+        addDocument({ title, artist, cover, song_path })
+        navigate('/')
     }
 
     return(
