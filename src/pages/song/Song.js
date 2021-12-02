@@ -4,6 +4,7 @@ import './Song.css'
 import { useParams, useNavigate } from 'react-router';
 // HOOKS 
 import { useDocument } from '../../hooks/useDocument';
+import SongPlayer from '../../components/SongPlayer';
 
 const Song = () => {
     // STATE
@@ -21,6 +22,7 @@ const Song = () => {
                 <div className='song-page-right'>
                     <h2>{song.title}</h2>
                     <h4>{song.artist}</h4>
+                    <SongPlayer song={song} />
                     <button 
                         className='btn' 
                         onClick={() => navigate('/')}
@@ -32,11 +34,13 @@ const Song = () => {
         )
     }
     return(
-        <div className='song-page'>
-            {isPending && <p>Song is Loading...</p>}
-            {error && <p className='error'>{error}</p>}
-            {song && renderContent()}
-        </div>
+        <>
+            <div className='song-page'>
+                {isPending && <p>Song is Loading...</p>}
+                {error && <p className='error'>{error}</p>}
+                {song && renderContent()}
+            </div>
+        </>
     );
 }
 
