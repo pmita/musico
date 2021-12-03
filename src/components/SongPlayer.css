@@ -1,0 +1,10 @@
+.controls-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls-container button{
+    margin: 0 1rem;
+}

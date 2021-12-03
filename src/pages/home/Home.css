@@ -1,0 +1,7 @@
+.home-page{
+    padding: 1rem 0;
+    background: var(--black-color);
+    color: var(--white-color);
+    display: grid;
+    place-items: center;
+}

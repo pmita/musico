@@ -1,0 +1,12 @@
+.songs{
+    width: 100%;
+}
+
+.songs-grid{
+    width: 100%;
+    padding: 1rem 5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 350px;
+    gap: 1rem;
+}
