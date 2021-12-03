@@ -1,7 +1,7 @@
 import React from 'react'
 import './Song.css'
 // ROUTER
-import { useParams, useNavigate } from 'react-router';
+import { useParams } from 'react-router';
 // HOOKS 
 import { useDocument } from '../../hooks/useDocument';
 import SongPlayer from '../../components/SongPlayer';
@@ -10,7 +10,6 @@ const Song = () => {
     // STATE
     const { id } = useParams()
     const { document : song, isPending, error } = useDocument('songs', id)
-    const navigate = useNavigate()
 
     // FUNCTIONS
     const renderContent = () => {
@@ -23,12 +22,6 @@ const Song = () => {
                     <h2>{song.title}</h2>
                     <h4>{song.artist}</h4>
                     <SongPlayer song={song} />
-                    <button 
-                        className='btn' 
-                        onClick={() => navigate('/')}
-                    >
-                        Go Back
-                    </button>
                 </div>
             </>
         )

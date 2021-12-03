@@ -38,19 +38,19 @@ const SongPlayer = ({ song }) => {
 
     return(
         <>
-            <AudioControls 
-                audioRef={audioRef} 
-                keepPlaying={keepPlaying} 
-                setKeepPlaying={setKeepPlaying}
-                isPlaying={isPlaying}
-                setIsPlaying={setIsPlaying}
-            />
             <input
                 type='range'
                 min={0}
                 max={audioDuration || 0}
                 value={audioTimestamp}
                 onChange={(e) => audioClickUpdate(e)}
+            />
+            <AudioControls 
+                audioRef={audioRef} 
+                keepPlaying={keepPlaying} 
+                setKeepPlaying={setKeepPlaying}
+                isPlaying={isPlaying}
+                setIsPlaying={setIsPlaying}
             />
             <audio
                 ref={audioRef}
